@@ -6,8 +6,15 @@ class MinimumTokenizer {
     fun tokenize(text: String) {
         val tokenizer = Tokenizer()
         for (token in tokenizer.tokenize(text)) {
-            val result = "${token.baseForm} : ${token.partOfSpeechLevel1}"
-            println(result)
+            val results = arrayOf(
+                token.baseForm,
+                token.partOfSpeechLevel1,
+                token.partOfSpeechLevel2,
+                token.partOfSpeechLevel3,
+                token.partOfSpeechLevel4
+            )
+
+            println(results.joinToString(separator = " : "))
         }
     }
 
